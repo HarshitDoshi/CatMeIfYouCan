@@ -1,0 +1,6 @@
+{
+  "name": "CatMeIfYouCan",
+  "build": {
+    "dockerfile": "Dockerfile"
+  }
+}

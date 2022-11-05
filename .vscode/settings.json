@@ -1,0 +1,80 @@
+{
+  "workbench.colorTheme": "Solarized Dark",
+  "workbench.preferredDarkColorTheme": "Solarized Dark",
+  "workbench.editor.showIcons": true,
+  "workbench.editor.showTabs": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.productIconTheme": "material-product-icons",
+  "editor.fontFamily": "'VictorMono Nerd Font', 'FiraCode Nerd Font'",
+  "terminal.integrated.fontFamily": "FiraCode Nerd Font",
+  "terminal.integrated.fontSize": 14,
+  "editor.fontLigatures": true,
+  "editor.fontSize": 14,
+  "editor.fontWeight": "normal",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "modificationsIfAvailable",
+  "editor.formatOnType": true,
+  "editor.linkedEditing": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.matchBrackets": "always",
+  "editor.guides.bracketPairs": true,
+  "editor.guides.bracketPairsHorizontal": true,
+  "editor.autoClosingBrackets": "always",
+  "editor.guides.highlightActiveBracketPair": true,
+  "editor.snippetSuggestions": "inline",
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "editor.suggest.showSnippets": true,
+  "editor.tabCompletion": "on",
+  "files.autoSave": "onFocusChange",
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.fontFamily": "'SF Pro'",
+    "editor.fontSize": 16,
+    "editor.comments.insertSpace": true,
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": false
+    },
+    "editor.tabSize": 4,
+    "editor.suggest.preview": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "python.languageServer": "Default",
+  "[python]": {
+    "editor.tabCompletion": "on",
+    "editor.tabSize": 4,
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  "[javascript]": {
+    "editor.tabSize": 2
+  },
+  "[javascriptreact]": {
+    "editor.tabSize": 2
+  },
+  "[typescript]": {
+    "editor.tabSize": 2
+  },
+  "[typescriptreact]": {
+    "editor.tabSize": 2
+  },
+  "[json]": {
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.insertMode": "replace",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "keep",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    }
+  },
+}

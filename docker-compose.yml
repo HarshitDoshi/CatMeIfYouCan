@@ -1,0 +1,20 @@
+services:
+  server:
+    build: ./
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./app/:/app/
+    ports:
+      - 8000:8000
+    env_file:
+      - ./.env.development
+    depends_on:
+      - database
+  database:
+    image: postgres:latest
+    volumes:
+      - data:/var/lib/postgresql/data/
+    env_file:
+      - ./.env.production.database
+volumes:
+  data:

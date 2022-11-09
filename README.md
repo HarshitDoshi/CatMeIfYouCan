@@ -2,6 +2,40 @@
 
 The world's best cat pictures API
 
+## Get Started
+
+To run this API, it is required to use Docker with Docker-Compose. The following modes are supported while running the API:
+
+- Development
+- Production
+
+The difference between Development and Production is that Production mode will have:
+- the Django `DEBUG` setting turned off,
+- the way in which static and media files are handled will vary, and
+- NGINX will be used along-with Gunicorn for serving the API.
+
+### Development
+
+To run the API in "Development" mode, use the following set of commands:
+
+```bash
+docker-compose up --detach --build
+```
+
+### Production
+
+To run the API in "Production" mode, use the following set of commands:
+
+```bash
+docker-compose -f docker-compose.production.yml up --detach --build
+```
+```bash
+docker-compose -f docker-compose.production.yml exec server python manage.py migrate --noinput
+```
+```bash
+docker-compose -f docker-compose.production.yml exec server python manage.py collectstatic --no-input --clear
+```
+
 ## Overview
 
 Your task is to build a RESTful API for uploading and managing cat pictures.
@@ -10,29 +44,29 @@ Your task is to build a RESTful API for uploading and managing cat pictures.
 
 Your API MUST support the following operations:
 
-- Upload a cat pic.
+- [x] Upload a cat pic.
     - `POST` request
-- Delete a cat pic.
+- [x] Delete a cat pic.
     - `DELETE` request
-- Update a previously uploaded cat pic (not just metadata) in place.
+- [x] Update a previously uploaded cat pic (not just metadata) in place.
     - `PUT` or `PATCH` request
-- Fetch a particular cat image file by its ID.
+- [x] Fetch a particular cat image file by its ID.
     - `GET` request
     - `/cats/{id}`
-- Fetch a list of the uploaded cat pics.
+- [x] Fetch a list of the uploaded cat pics.
     - `GET` request
     - `/cats` end-point
 
 Additionally, you MUST:
 
-- Correctly use HTTP response codes, including error handling.
+- [x] Correctly use HTTP response codes, including error handling.
 - Provide documentation for your API's behavior.
-- Provide instructions for us to get your API up and running.
+- [x] Provide instructions for us to get your API up and running.
 - Write a basic suite of tests for your code.
 
 ## Suggestions
 
 If you want to show off a little bit, do one or more of the following:
 
-- Dockerize your application, it's okay if your pictures aren't persisted outside of the container runtime.
+- [x] Dockerize your application, it's okay if your pictures aren't persisted outside of the container runtime.
 - Setup authentication/authorization

@@ -1,0 +1,40 @@
+FROM python:alpine as builder
+
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+RUN apk update && apk add postgresql-dev gcc python3-dev musl-dev
+
+RUN pip install --upgrade pip
+COPY ./requirements.txt .
+RUN pip wheel --no-cache-dir --no-deps --wheel-dir /wheels -r requirements.txt
+
+FROM python:alpine
+
+RUN mkdir -p /home/app
+
+RUN addgroup -S app && adduser -S app -G app
+
+ENV HOME=/home/app
+ENV APP_HOME=/home/app/server
+RUN mkdir $APP_HOME
+RUN mkdir $APP_HOME/static
+RUN mkdir $APP_HOME/media
+WORKDIR $APP_HOME
+
+RUN apk update && apk add libpq
+COPY --from=builder /wheels /wheels
+COPY --from=builder /requirements.txt .
+RUN pip install --no-cache /wheels/*
+
+COPY ./entrypoint.production.sh .
+RUN sed -i 's/\r$//g' $APP_HOME/entrypoint.production.sh
+RUN chmod +x  $APP_HOME/entrypoint.production.sh
+
+COPY . $APP_HOME
+
+RUN chown -R app:app $APP_HOME
+
+USER app
+
+ENTRYPOINT ["/home/app/server/entrypoint.production.sh"]

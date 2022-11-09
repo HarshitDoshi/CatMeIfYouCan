@@ -46,5 +46,8 @@
     "nopeslide.vscode-drawio-plugin-mermaid",
     "Gruntfuggly.mermaid-export",
     "hediet.vscode-drawio"
-  ]
+],
+"features": {
+	"ghcr.io/devcontainers/features/docker-in-docker:1": {}
+}
 }

@@ -36,6 +36,16 @@ docker-compose -f docker-compose.production.yml exec server python manage.py mig
 docker-compose -f docker-compose.production.yml exec server python manage.py collectstatic --no-input --clear
 ```
 
+## API Documentation
+
+| End-Point | HTTP Method | CRUD Method | Notes |
+|:---|:---:|:---:|:---|
+| `/api/pictures` | `POST` | Create | Create a new cat picture |
+| `/api/pictures` | `GET` | Read | Read all cat pictures |
+| `/api/pictures/:id` | `GET` | Read | Read cat picture with particular ID |
+| `/api/pictures/:id` | `PUT` | Update | Update cat picture with particular ID |
+| `/api/pictures/:id` | `DELETE` | Delete | Delete cat picture with particular ID |
+
 ## Overview
 
 Your task is to build a RESTful API for uploading and managing cat pictures.
@@ -60,13 +70,13 @@ Your API MUST support the following operations:
 Additionally, you MUST:
 
 - [x] Correctly use HTTP response codes, including error handling.
-- Provide documentation for your API's behavior.
+- [x] Provide documentation for your API's behavior.
 - [x] Provide instructions for us to get your API up and running.
-- Write a basic suite of tests for your code.
+- [x] Write a basic suite of tests for your code.
 
 ## Suggestions
 
 If you want to show off a little bit, do one or more of the following:
 
 - [x] Dockerize your application, it's okay if your pictures aren't persisted outside of the container runtime.
-- Setup authentication/authorization
+- [x] Setup authentication/authorization

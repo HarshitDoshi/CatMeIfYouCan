@@ -2,6 +2,18 @@
 
 The world's best cat pictures API
 
+## Technology Stack
+
+- Python
+- Django
+- Django REST Framework
+- Coverage
+- Psycopg2
+- Gunicorn
+- NGINX
+- PostgreSQL
+- Docker
+
 ## Get Started
 
 To run this API, it is required to use Docker with Docker-Compose. The following modes are supported while running the API:
